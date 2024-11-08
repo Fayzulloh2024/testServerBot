@@ -83,7 +83,7 @@ public class ScheduledTask {
 
 
     private void handleErrorResponse(String serviceName, HttpStatusCode statusCode, String responseBody) {
-        Services easyCargo = serviceRepo.findByName("Easy Cargo");
+        Services easyCargo = serviceRepo.findByName("");
         if (easyCargo.getServiceStatus().equals(ServiceStatus.ok)) {
         easyCargo.setServiceStatus(ServiceStatus.error);
         serviceRepo.save(easyCargo);
