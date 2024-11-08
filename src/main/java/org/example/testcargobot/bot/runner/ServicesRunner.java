@@ -22,9 +22,9 @@ public class ServicesRunner implements CommandLineRunner {
 
         if (ddl.equals("create")) {
         Services service1 = Services.builder()
-                .name("Easy Cargo")
-                .url("https://back.ezycargo.uz/product/trackingid")
-                .body("{ \"trackingid\": \"JT5216141955895\" }")
+                .name("")
+                .url("")
+                .body("")
                 .serviceStatus(ServiceStatus.ok)
                 .build();
         serviceRepo.save(service1);
