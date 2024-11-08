@@ -36,10 +36,10 @@ public class RestartApiService {
 
 
     public void restartApiServer() {
-        String host = "185.196.213.56"; // Server IP
-        String user = "root";           // SSH foydalanuvchi
-        String password = "1968971971aA!"; // SSH parol (parolingizni kiriting)
-        int port = 22;                  // SSH porti (standart 22)
+        String host = ""; // Server IP
+        String user = "";           // SSH foydalanuvchi
+        String password = ""; // SSH parol (parolingizni kiriting)
+        int port = ;                  // SSH porti (standart 22)
 
         try {
             JSch jsch = new JSch();
@@ -47,16 +47,16 @@ public class RestartApiService {
             session.setPassword(password);
 
             // SSH strict host key checking ni o'chirish
-            session.setConfig("StrictHostKeyChecking", "no");
+            session.setConfig("", "");
 
             session.connect();
 
             // Buyruqlarni ketma-ket bajarish
-            executeCommand(session, "cd /var/www/backend-eazy && pm2 delete all");
-            executeCommand(session, "pm2 save");
-            executeCommand(session, "cd /var/www/backend-eazy && pm2 start ts-node -- -r tsconfig-paths/register --transpile-only -r dotenv/config src/server.ts --name backend-eazy");
-            executeCommand(session, "pm2 save");
-            executeCommand(session, "pm2 startup");
+            executeCommand(session, "");
+            executeCommand(session, "");
+            executeCommand(session, "");
+            executeCommand(session, "");
+            executeCommand(session, "");
 
             session.disconnect();
             clearErorMsg();
@@ -84,9 +84,9 @@ public class RestartApiService {
     }
 
     private boolean checkServise() {
-      return   checkRestart("https://back.ezycargo.uz/product/trackingid",
-                "Easy Cargo",
-                "{ \"trackingid\": \"JT5216141955895\" }"
+      return   checkRestart("",
+                " ",
+                ""
         );
     }
 
